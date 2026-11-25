@@ -6,6 +6,7 @@ from rest_framework.exceptions import ValidationError
 
 def cast_bool_from_str(value):
     if isinstance(value, str):
+        value = value.strip()
         if value.lower() in ['true', 'yes', 'on', '1']:
             value = True
         elif value.lower() in ['false', 'no', 'not', 'off', '0']:
